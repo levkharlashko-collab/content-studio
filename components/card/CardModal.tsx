@@ -157,7 +157,6 @@ export function CardModal({ cardId, open, onClose }: CardModalProps) {
                                 ? 'ring-1'
                                 : 'bg-gray-50 text-gray-400 hover:text-gray-600'
                             }
-                            style={selected ? { ringColor: PLATFORM_COLORS[p.name] } : undefined}
                           >
                             {p.icon} {p.name}
                           </Badge>
