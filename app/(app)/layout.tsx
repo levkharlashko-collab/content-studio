@@ -1,27 +1,11 @@
-import { createClient } from '@/lib/supabase/server'
-import { redirect } from 'next/navigation'
-import { Sidebar } from '@/components/layout/Sidebar'
 import { Toaster } from 'sonner'
 
-export default async function AppLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-
-  if (!user) {
-    redirect('/login')
-  }
-
+// Demo mode — no auth check
+export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-screen bg-white overflow-hidden">
-      <Sidebar />
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        {children}
-      </div>
+    <>
+      {children}
       <Toaster position="bottom-right" richColors />
-    </div>
+    </>
   )
 }
