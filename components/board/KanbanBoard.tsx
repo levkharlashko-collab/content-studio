@@ -11,7 +11,6 @@ import {
   closestCorners,
   type DragStartEvent,
   type DragEndEvent,
-  type DragOverEvent,
 } from '@dnd-kit/core'
 import { sortableKeyboardCoordinates, arrayMove } from '@dnd-kit/sortable'
 import { KanbanColumn } from './KanbanColumn'
