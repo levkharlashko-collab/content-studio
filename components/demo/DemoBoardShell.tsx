@@ -22,7 +22,7 @@ import { LayoutGrid, Settings } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils/cn'
-import { Toaster, toast } from 'sonner'
+import { Toaster } from 'sonner'
 
 export function DemoBoardShell() {
   const store = useDemoStore()
