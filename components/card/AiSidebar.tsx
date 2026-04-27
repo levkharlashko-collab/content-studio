@@ -23,7 +23,7 @@ export function AiSidebar({
   initialMessages = [],
   onInsertIntoScript,
 }: AiSidebarProps) {
-  const { messages, input, handleInputChange, handleSubmit, isLoading, stop, setMessages } =
+  const { messages, input, setInput, handleSubmit, isLoading, stop, setMessages } =
     useChat({
       api: '/api/ai/chat',
       body: {
@@ -108,8 +108,8 @@ export function AiSidebar({
       <AiChatInput
         input={input}
         isLoading={isLoading}
-        onChange={(v) => handleInputChange({ target: { value: v } } as React.ChangeEvent<HTMLInputElement>)}
-        onSubmit={handleSubmit}
+        onChange={setInput}
+        onSubmit={() => handleSubmit()}
         onStop={stop}
       />
     </div>
